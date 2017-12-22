@@ -1,13 +1,12 @@
-FROM node:6
+FROM alpine:3.3
+
+RUN apk add --update nodejs 
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
 
 WORKDIR /usr/src/node-red
 
-RUN apt-get update
-RUN apt-get install -y libavahi-compat-libdnssd-dev
-RUN apt-get clean
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json /usr/src/node-red/
 RUN npm install
