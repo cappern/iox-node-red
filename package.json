@@ -1,12 +1,12 @@
 {
-    "name": "node-red-docker",
+    "name": "iox-node-red",
     "version": "1.0.0",
     "description": "A visual tool for wiring the Internet of Things",
     "homepage": "http://nodered.org",
-    "license": "Apache-2.0",
+    "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/node-red/node-red-docker.git"
+        "url": "https://github.com/cappern/iox-node-red.git"
     },
     "main": "node_modules/node-red/red/red.js",
     "scripts": {
@@ -14,13 +14,7 @@
     },
     "contributors": [
         {
-            "name": "Dave Conway-Jones"
-        },
-        {
-            "name": "Nick O'Leary"
-        },
-        {
-            "name": "James Thomas"
+            "name": "Christoffer Cappelen"
         }
     ],
     "dependencies": {
@@ -29,8 +23,5 @@
         "node-red-node-base64": "*",
         "node-red-node-suncalc": "*",
         "node-red-node-random": "*"
-    },
-    "engines": {
-        "node": "4.*.*"
     }
 }
