@@ -1,11 +1,11 @@
-FROM node:6-alpine
+FROM node:9-latest
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
 
 WORKDIR /usr/src/node-red
 
-
+RUN apt-get install -y libavahi-compat-libdnssd-dev
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json /usr/src/node-red/
 RUN npm install
