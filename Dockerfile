@@ -5,7 +5,9 @@ RUN mkdir -p /usr/src/node-red
 
 WORKDIR /usr/src/node-red
 
+RUN apt-get update
 RUN apt-get install -y libavahi-compat-libdnssd-dev
+RUN apt-get clean
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json /usr/src/node-red/
 RUN npm install
