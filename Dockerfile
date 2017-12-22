@@ -1,13 +1,14 @@
 FROM node:6-alpine
 
 # Home directory for Node-RED application source code.
-RUN mkdir -p /data/appdata
+RUN mkdir -p /usr/src/node-red
 
+WORKDIR /usr/src/node-red
 
 
 # package.json contains Node-RED NPM module and node dependencies
-COPY package.json /data/appdata
-RUN npm install node-red -g
+COPY package.json /usr/src/node-red/
+RUN npm install
 
 # User configuration directory volume
 EXPOSE 1880
@@ -16,4 +17,4 @@ EXPOSE 1880
 ENV FLOWS=flows.json
 ENV NODE_PATH=/usr/src/node-red/node_modules:/data/appdata/node_modules
 
-CMD ["node-red","--userDir", "/data/appdata"]
+CMD ["npm", "start", "--", "--userDir", "/data/appdata"]
