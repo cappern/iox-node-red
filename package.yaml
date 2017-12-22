@@ -1,0 +1,25 @@
+descriptor-schema-version: "2.2"
+
+info:
+  name: iox-node-red
+  description: "Node-Red"
+  version: "1.0"
+  author-link: "http://www.node-red.com"
+  author-name: "Cappern"
+
+app:
+  # Indicate app type (vm, paas, lxc etc.,)
+  cpuarch: "x86_64"
+  type: docker
+  resources:
+    profile: c1.medium
+    network:
+      -
+        interface-name: eth0
+        ports:
+            tcp: [1880]
+
+# Specify runtime and startup
+  startup:
+    rootfs: rootfs.tar
+    target: ["npm", "start", "--", "--userDir", "/data/appdata"]

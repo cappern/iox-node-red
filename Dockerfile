@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:6
 
 # Home directory for Node-RED application source code.
 RUN mkdir -p /usr/src/node-red
