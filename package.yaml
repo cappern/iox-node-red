@@ -2,9 +2,9 @@ descriptor-schema-version: "2.2"
 
 info:
   name: iox-node-red
-  description: "Node-Red"
+  description: "A Node-Red server for iOX"
   version: "1.0"
-  author-link: "http://www.node-red.com"
+  author-link: "https://github.com/cappern/iox-node-red"
   author-name: "Cappern"
 
 app:
@@ -13,6 +13,9 @@ app:
   type: docker
   resources:
     profile: c1.medium
+    platform-env:
+         - NODE_PATH=/usr/src/node-red/node_modules:/data/appdata/node_modules
+
     network:
       -
         interface-name: eth0
@@ -22,4 +25,4 @@ app:
 # Specify runtime and startup
   startup:
     rootfs: rootfs.tar
-    target: ["npm", "start", "--", "--userDir", "/data/appdata"]
+    target: ["npm", "start" ,"--prefix", "usr/src/node-red/", "--", "--userDir", "/data/appdata", "--settings", "/usr/src/node-red/settings.js"]
