@@ -5,5 +5,5 @@ For more info about Node-Red https://nodered.org / https://github.com/node-red/n
 
     docker build github.com/cappern/iox-node-red -t iox-node-red && ioxclient docker package iox-node-red:latest .
 
-Tested on ir809 successfully
-Please leave a comment if you find it useful.
+Tested on ir809 successfully.
+Please leave a comment if you find it useful or have any questions.
